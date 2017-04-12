@@ -13,12 +13,15 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 public class MyRecycleAdapter extends RecyclerView.Adapter<MyRecycleAdapter.ViewHolder> {
+
     private ArrayList<Student> mDataset;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView mTextView;
+
         public Student s;
-        Switch sw;
+
+        public TextView mTextView;
+        public Switch sw;
 
         public ViewHolder(View v) {
             super(v);
@@ -57,6 +60,7 @@ public class MyRecycleAdapter extends RecyclerView.Adapter<MyRecycleAdapter.View
     public void onBindViewHolder(ViewHolder holder, int position) {
 
         Student s = (Student)mDataset.get(position);
+
         holder.s = s;
         holder.mTextView.setText(s.name);
         holder.sw.setChecked(s.onLesson);
